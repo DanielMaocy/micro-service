@@ -22,4 +22,11 @@ public class SystemController {
 		logger.info("/hello, host:" + instance.getHost() + ", service id:" + instance.getServiceId());
 		return "Hello World ...";
 	}
+	
+	@RequestMapping("/login")
+	public String login(String name, String password) {
+		String result = "name=" + name + " password=" + password;
+		logger.info(result);
+		return result;
+	}
 }

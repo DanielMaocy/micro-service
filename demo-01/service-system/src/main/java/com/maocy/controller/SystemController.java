@@ -1,5 +1,7 @@
 package com.maocy.controller;
 
+import java.util.Random;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -25,7 +27,13 @@ public class SystemController {
 	
 	@RequestMapping("/login")
 	public String login(String name, String password) {
-		String result = "name=" + name + " password=" + password;
+		int sleepTime = new Random().nextInt(100);
+		try {
+			Thread.sleep(sleepTime);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		String result = "name=" + name + " password=" + password + ": " + System.currentTimeMillis();
 		logger.info(result);
 		return result;
 	}

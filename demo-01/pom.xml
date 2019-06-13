@@ -12,5 +12,6 @@
   		<module>eureka-server</module>
   		<module>service-system</module>
   		<module>consumer-ribbon</module>
+  		<module>hystrix-dashboard</module>
   	</modules>
 </project>

@@ -1,5 +1,7 @@
 package com.maocy.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import org.apache.log4j.Logger;
@@ -8,6 +10,8 @@ import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.maocy.entity.User;
 
 @RestController
 public class SystemController {
@@ -35,6 +39,28 @@ public class SystemController {
 		}
 		String result = "name=" + name + " password=" + password + ": " + System.currentTimeMillis();
 		logger.info(result);
+		return result;
+	}
+	
+	@RequestMapping("/user-get")
+	public User getUser(String id) {
+		User user = new User(id);
+		System.out.println("/user-get == >" + user.toString());
+		return user;
+	}
+	
+	@RequestMapping("/user-get-all")
+	public List<User> getUserAll(String[] ids) {
+		if (null == ids || ids.length == 0) {
+			return null;
+		}
+		
+		List<User> result = new ArrayList<User>();
+		for (String id : ids) {
+			result.add(new User(id));
+		}
+		
+		System.out.println("/user-get-all == >" + result.toString());
 		return result;
 	}
 }

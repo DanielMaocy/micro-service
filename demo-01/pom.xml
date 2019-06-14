@@ -13,5 +13,6 @@
   		<module>service-system</module>
   		<module>consumer-ribbon</module>
   		<module>hystrix-dashboard</module>
+  		<module>turbine</module>
   	</modules>
 </project>

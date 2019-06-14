@@ -7,8 +7,8 @@
 	    <artifactId>demo-01</artifactId>
 	    <version>0.0.1-SNAPSHOT</version>
   	</parent>
-  	<artifactId>hystrix-dashboard</artifactId>
-  	<name>hystrix-dashboard</name>
+  	<artifactId>turbine</artifactId>
+  	<name>turbine</name>
   	<url>http://maven.apache.org</url>
   	
   	<properties>
@@ -29,12 +29,7 @@
 		
 		<dependency>
   			<groupId>org.springframework.cloud</groupId>
-  			<artifactId>spring-cloud-starter-hystrix</artifactId>
-  		</dependency>
-  		
-		<dependency>
-  			<groupId>org.springframework.cloud</groupId>
-    		<artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
+  			<artifactId>spring-cloud-starter-turbine</artifactId>
   		</dependency>
   		
 		<dependency>

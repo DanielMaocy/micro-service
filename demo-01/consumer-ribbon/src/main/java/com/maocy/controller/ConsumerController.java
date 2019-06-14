@@ -1,5 +1,6 @@
 package com.maocy.controller;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,7 @@ public class ConsumerController {
 	}
 	
 	@RequestMapping("/user-get-all")
-	public List<User> getUserAll(List<String> ids) {
-		return consumerService.getUserAll(ids);
+	public List<User> getUserAll(String[] ids) {
+		return consumerService.getUserAll(Arrays.asList(ids));
 	}
 }

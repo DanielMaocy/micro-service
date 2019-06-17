@@ -14,5 +14,6 @@
   		<module>consumer-ribbon</module>
   		<module>hystrix-dashboard</module>
   		<module>turbine</module>
+  		<module>consumer-feign</module>
   	</modules>
 </project>

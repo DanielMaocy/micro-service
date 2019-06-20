@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+	http://maven.apache.org/xsd/maven-4.0.0.xsd" 
+	xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   	<modelVersion>4.0.0</modelVersion>
   	<parent>
@@ -7,8 +9,8 @@
 	    <artifactId>demo-01</artifactId>
 	    <version>0.0.1-SNAPSHOT</version>
   	</parent>
-  	<artifactId>consumer-feign</artifactId>
-  	<name>consumer-feign</name>
+  	<artifactId>service-api</artifactId>
+  	<name>service-api</name>
   	<url>http://maven.apache.org</url>
   	
   	<properties>
@@ -28,16 +30,6 @@
 		</dependency>
 		
 		<dependency>
-  			<groupId>org.springframework.cloud</groupId>
-  			<artifactId>spring-cloud-starter-eureka-server</artifactId>
-  		</dependency>
-  		
-  		<dependency>
-  			<groupId>org.springframework.cloud</groupId>
-  			<artifactId>spring-cloud-starter-feign</artifactId>
-  		</dependency>
-  		
-  		<dependency>
   			<groupId>com.maocy</groupId>
   			<artifactId>service-api</artifactId>
   			<version>0.0.1-SNAPSHOT</version>

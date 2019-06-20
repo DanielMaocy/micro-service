@@ -2,21 +2,21 @@ package com.maocy.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.maocy.entity.User;
 
 @RestController
 public class SystemController {
-
-	private final Logger logger = Logger.getLogger(getClass());
 	
 	@Autowired
 	private DiscoveryClient client;
@@ -25,20 +25,14 @@ public class SystemController {
 	public String index() {
 		@SuppressWarnings("deprecation")
 		ServiceInstance instance = client.getLocalServiceInstance();
-		logger.info("/hello, host:" + instance.getHost() + ", service id:" + instance.getServiceId());
+		System.out.println("/hello, host:" + instance.getHost() + ", service id:" + instance.getServiceId());
 		return "Hello World ...";
 	}
 	
 	@RequestMapping("/login")
 	public String login(String name, String password) {
-		int sleepTime = new Random().nextInt(100);
-		try {
-			Thread.sleep(sleepTime);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
 		String result = "name=" + name + " password=" + password + ": " + System.currentTimeMillis();
-		logger.info(result);
+		System.out.println(result);
 		return result;
 	}
 	
@@ -62,5 +56,24 @@ public class SystemController {
 		
 		System.out.println("/user-get-all == >" + result.toString());
 		return result;
+	}
+	
+	@RequestMapping(value="/name-get", method=RequestMethod.GET)
+	public String getName(@RequestParam String name) {
+		System.out.println("getName==>" + name);
+		return name;
+	}
+	
+	@RequestMapping(value="/user-init", method=RequestMethod.GET)
+	public User initUser(@RequestHeader String name, @RequestHeader Integer age) {
+		User user = new User(String.valueOf(System.currentTimeMillis()), name, age);
+		System.out.println("initUser==>" + user);
+		return user;
+	}
+	
+	@RequestMapping(value="/user-add", method=RequestMethod.POST)
+	public User addUser(@RequestBody User user) {
+		System.out.println("addUser==>" + user.toString());
+		return user;
 	}
 }

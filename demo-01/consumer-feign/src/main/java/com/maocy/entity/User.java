@@ -1,7 +1,6 @@
 package com.maocy.entity;
 
 import java.io.Serializable;
-
 import lombok.Data;
 
 @Data

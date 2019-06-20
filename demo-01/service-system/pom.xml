@@ -30,5 +30,11 @@
   			<groupId>org.springframework.cloud</groupId>
   			<artifactId>spring-cloud-starter-eureka-server</artifactId>
   		</dependency>
+  		
+  		<dependency>
+  			<groupId>com.maocy</groupId>
+  			<artifactId>service-api</artifactId>
+  			<version>0.0.1-SNAPSHOT</version>
+  		</dependency>
 	</dependencies>
 </project>

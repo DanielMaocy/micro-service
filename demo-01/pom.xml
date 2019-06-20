@@ -15,5 +15,6 @@
   		<module>hystrix-dashboard</module>
   		<module>turbine</module>
   		<module>consumer-feign</module>
+  		<module>service-api</module>
   	</modules>
 </project>

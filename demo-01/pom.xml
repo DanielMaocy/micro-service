@@ -16,5 +16,6 @@
   		<module>turbine</module>
   		<module>consumer-feign</module>
   		<module>service-api</module>
+  		<module>zuul-gateway</module>
   	</modules>
 </project>

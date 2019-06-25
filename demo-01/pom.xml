@@ -18,5 +18,6 @@
   		<module>service-api</module>
   		<module>zuul-gateway</module>
   		<module>config-server</module>
+  		<module>config-client</module>
   	</modules>
 </project>

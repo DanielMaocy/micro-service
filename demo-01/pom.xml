@@ -20,5 +20,6 @@
   		<module>config-server</module>
   		<module>config-client</module>
   		<module>rabbitmq-service</module>
+  		<module>stream-rabbitmq-service</module>
   	</modules>
 </project>

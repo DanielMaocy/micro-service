@@ -21,5 +21,8 @@
   		<module>config-client</module>
   		<module>rabbitmq-service</module>
   		<module>stream-rabbitmq-service</module>
+  		<module>sleuth-service-1</module>
+  		<module>sleuth-service-2</module>
+  		<module>zipkin-server</module>
   	</modules>
 </project>
